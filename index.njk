@@ -45,7 +45,47 @@ title: 首页
     {% else %}
         <div class="empty-state">
             <h3>暂无蛋糕展示</h3>
-            <p>请前往<a href="/admin/">管理后台</a>添加蛋糕信息</p>
+            
+            <!-- 添加管理面板 -->
+            <section class="admin-panel">
+                <h2>添加新蛋糕</h2>
+                <form class="cake-form" name="add-cake" netlify>
+                    <div class="form-group">
+                        <label>蛋糕名称：</label>
+                        <input type="text" name="title" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>描述：</label>
+                        <textarea name="description" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>价格：</label>
+                            <input type="text" name="price" placeholder="例如：￥168" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>口味：</label>
+                            <input type="text" name="flavor" placeholder="例如：芒果慕斯">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>尺寸：</label>
+                            <input type="text" name="size" placeholder="例如：6英寸">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>图片URL：</label>
+                        <input type="url" name="image" placeholder="https://example.com/cake.jpg">
+                        <small>提示：您可以先将图片发到微信群，然后复制图片链接</small>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">提交蛋糕信息</button>
+                </form>
+            </section>
         </div>
     {% endfor %}
 </section>
