@@ -1,1 +1,14 @@
-
+<footer class="footer">
+    <div class="contact-info">
+        <h3>联系我们</h3>
+        <div class="contact-details">
+            <p>📞 {{ site.phone }}</p>
+            <p>📍 {{ site.address }}</p>
+            <p>🕒 {{ site.hours }}</p>
+        </div>
+        
+        <button class="wechat-btn" onclick="copyWechat('{{ site.wechat }}')">
+            📱 点击复制微信号: {{ site.wechat }}
+        </button>
+    </div>
+</footer>
