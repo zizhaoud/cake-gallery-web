@@ -225,13 +225,117 @@ body {
     border: none;
     border-radius: 8px;
     font-size: 1rem;
-    cursor: pointer;
+    cursor: button;
     transition: all 0.3s ease;
 }
 
 .wechat-btn:hover {
     background: #06ae56;
     transform: translateY(-2px);
+}
+
+/* 管理面板样式 */
+.admin-panel {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin: 40px auto;
+    max-width: 800px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.admin-panel h2 {
+    color: #e91e63;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.cake-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+    font-size: 1rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #f0f0f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Noto Sans SC', sans-serif;
+    transition: all 0.3s ease;
+    background: #fafafa;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #e91e63;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+}
+
+.form-group small {
+    display: block;
+    margin-top: 6px;
+    color: #888;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #e91e63, #ad1457);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(135deg, #ad1457, #e91e63);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(233, 30, 99, 0.3);
+}
+
+/* 成功消息样式 */
+.form-success {
+    background: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+    text-align: center;
+    border: 1px solid #c3e6cb;
 }
 
 /* 响应式设计 */
@@ -260,6 +364,40 @@ body {
     }
     
     .hero p {
+        font-size: 1rem;
+    }
+    
+    .admin-panel {
+        padding: 20px;
+        margin: 20px 0;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .cake-form {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-panel {
+        padding: 15px;
+    }
+    
+    .admin-panel h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+    
+    .form-group {
+        margin-bottom: 15px;
+    }
+    
+    .submit-btn {
+        padding: 12px 15px;
         font-size: 1rem;
     }
 }
