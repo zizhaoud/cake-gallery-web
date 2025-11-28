@@ -1,0 +1,51 @@
+---
+layout: layout.njk
+title: 首页
+---
+
+<section class="hero">
+    <h2>发现美味蛋糕</h2>
+    <p>精选新鲜原料，手工制作，为您带来甜蜜体验</p>
+</section>
+
+<section class="gallery">
+    {% set cakes = collections.cakes | sort(false, false, "data.order") %}
+    {% for cake in cakes %}
+        {% if cake.data.published %}
+        <article class="cake-card">
+            <div class="cake-image">
+                {% if cake.data.image %}
+                <img src="{{ cake.data.image | url }}" alt="{{ cake.data.title }}">
+                {% else %}
+                <div class="image-placeholder">🍰</div>
+                {% endif %}
+            </div>
+            
+            <div class="cake-info">
+                <h3>{{ cake.data.title }}</h3>
+                <p class="description">{{ cake.data.description }}</p>
+                
+                <div class="cake-meta">
+                    {% if cake.data.flavor %}
+                    <span class="flavor">{{ cake.data.flavor }}</span>
+                    {% endif %}
+                    {% if cake.data.size %}
+                    <span class="size">{{ cake.data.size }}</span>
+                    {% endif %}
+                </div>
+                
+                <div class="price">{{ cake.data.price }}</div>
+                
+                <button class="contact-btn" onclick="copyWechat('{{ site.wechat }}')">
+                    📞 联系店家咨询
+                </button>
+            </div>
+        </article>
+        {% endif %}
+    {% else %}
+        <div class="empty-state">
+            <h3>暂无蛋糕展示</h3>
+            <p>请前往<a href="/admin/">管理后台</a>添加蛋糕信息</p>
+        </div>
+    {% endfor %}
+</section>
